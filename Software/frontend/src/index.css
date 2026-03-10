@@ -1,0 +1,95 @@
+/* index.css
+   This is the default Vite starter CSS.
+   It sets up a dark/light theme and some base element styles.
+
+   For ShopQuick, most of the real styling is in styles.css.
+   You can keep this file, but be aware:
+   - It sets body to display:flex and centers everything (place-items:center),
+     which can fight against our layout if it's still being imported.
+   - If your page ever looks "weirdly centered", this file is usually the reason.
+
+   If you want the cleanest setup, you can remove the flex-centering on body
+   (see note in the body rules below).
+*/
+
+:root {
+  /* Default font stack */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Vite template theme */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  /* Rendering tweaks */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  /* Template link styling */
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+
+  /* IMPORTANT:
+     These flex rules are from the template and they center the whole app.
+     Our ShopQuick layout already handles positioning, so if you notice layout issues,
+     you can comment out the next 3 lines.
+  */
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  /* Template heading size (we override in styles.css mostly) */
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  /* Basic button defaults (we override with .btn in styles.css) */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Light theme adjustments (template) */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
